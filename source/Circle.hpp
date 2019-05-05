@@ -3,14 +3,16 @@
 
 
 #include "vec2.hpp"
+#include "color.hpp"
 
 class Circle {
 public:
-    Circle(Vec2 const& ctr, float r);
+    Circle(Vec2 const& ctr, float r, Color const &col);
     float circumference() const;
 private:
     float radius_;
     Vec2 center_;
+    Color color_;
 };
 
 
