@@ -10,7 +10,7 @@
 
 class Rectangle {
 public:
-    Rectangle(Vec2 min, Vec2 max);
+    Rectangle(Vec2 const &min, Vec2 const &max);
 
 private:
     Vec2 min_;
