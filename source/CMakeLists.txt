@@ -17,7 +17,7 @@ add_executable(tests
         vec2.cpp
         glew.c
         tests.cpp
-        mat2.cpp mat2.hpp)
+        mat2.cpp mat2.hpp color.hpp Circle.cpp Circle.hpp Rectangle.cpp Rectangle.hpp)
 target_link_libraries(tests
         glfw
         ${GLFW_LIBRARIES}
