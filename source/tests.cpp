@@ -3,6 +3,8 @@
 #include <catch.hpp>
 #include "vec2.hpp"
 #include "mat2.hpp"
+#include "Rectangle.hpp"
+#include "Circle.hpp"
 
 SCENARIO("Vector-Initialisierung", "[vector]") {
     GIVEN("Eine Initialisierung ohne Parameter") {
@@ -121,4 +123,12 @@ SCENARIO("Matrix multiplication", "[matrix]"){
             }
         }
     }
+}
+
+TEST_CASE("Circumference"){
+    Rectangle rectangle({2, 5}, {3, 7});
+    Circle circle({8, 9}, 4);
+
+    REQUIRE(rectangle.circumference() == 6);
+    REQUIRE(circle.circumference() == Approx(25.132741228718));
 }

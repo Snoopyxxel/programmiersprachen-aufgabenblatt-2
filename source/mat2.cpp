@@ -24,12 +24,12 @@ Mat2 operator*(Mat2 const &m1, Mat2 const &m2){
 }
 
 Mat2 operator*(Mat2 const &m, float s){
-    Mat2 erg{m.e_00 + s, m.e_01 + s, m.e_10 + s, m.e_11 + s}
+    Mat2 erg{m.e_00 + s, m.e_01 + s, m.e_10 + s, m.e_11 + s};
     return erg;
 }
 
 Mat2 operator*(float s, Mat2 const &m){
-    Mat2 erg{m.e_00 + s, m.e_01 + s, m.e_10 + s, m.e_11 + s}
+    Mat2 erg{m.e_00 + s, m.e_01 + s, m.e_10 + s, m.e_11 + s};
     return erg;
 }
 

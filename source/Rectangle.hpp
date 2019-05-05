@@ -1,9 +1,5 @@
-//
-// Created by vito on 06.05.19.
-//
-
-#ifndef BLATT2_RECTANGLE_HPP
-#define BLATT2_RECTANGLE_HPP
+#ifndef RECTANGLE_HPP
+#define RECTANGLE_HPP
 
 
 #include "vec2.hpp"
@@ -11,11 +7,11 @@
 class Rectangle {
 public:
     Rectangle(Vec2 const &min, Vec2 const &max);
-
+    float circumference() const;
 private:
     Vec2 min_;
     Vec2 max_;
 };
 
 
-#endif //BLATT2_RECTANGLE_HPP
+#endif //RECTANGLE_HPP

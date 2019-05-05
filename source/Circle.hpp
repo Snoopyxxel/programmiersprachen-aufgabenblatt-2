@@ -7,6 +7,7 @@
 class Circle {
 public:
     Circle(Vec2 const& ctr, float r);
+    float circumference() const;
 private:
     float radius_;
     Vec2 center_;
