@@ -9,7 +9,10 @@
 int main(int argc, char* argv[])
 {
   Window win{std::make_pair(800,800)};
-  Rectangle test({200, 700}, {300, 500}, {0, 1, 0});
+  Rectangle rectangle_slim({200, 700}, {300, 500}, {0, 1, 0});
+  Rectangle rectangle_bold({500, 700}, {600, 500}, {0, 1, 0.5});
+  Circle circle_slim({200, 300}, 20.0f, {1, 0, 0});
+  Circle circle_bold({300, 300}, 20.0f, {0.5, 0, 0.5});
 
 
   while (!win.should_close()) {
@@ -19,8 +22,11 @@ int main(int argc, char* argv[])
     auto mouse_position = win.mouse_position();
 
     Circle test2({(float) mouse_position.first, (float) mouse_position.second}, 20.0f, {1, 0, 0});
-    test.draw(win);
+    rectangle_slim.draw(win);
+    rectangle_bold.draw(win, 3);
     test2.draw(win);
+    circle_slim.draw(win);
+    circle_bold.draw(win, 3);
 
     bool left_pressed = win.get_mouse_button(GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS;
 

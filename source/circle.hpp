@@ -11,6 +11,7 @@ public:
     Circle(Vec2 const& ctr, float r, Color const &col);
     float circumference() const;
     void draw(Window const &window) const;
+    void draw(Window const &window, float const &thickness) const;
 private:
     float radius_;
     Vec2 center_;
