@@ -1,4 +1,6 @@
 #include "window.hpp"
+#include "rectangle.hpp"
+#include "circle.hpp"
 #include <GLFW/glfw3.h>
 #include <utility>
 #include <cmath>
@@ -7,11 +9,18 @@
 int main(int argc, char* argv[])
 {
   Window win{std::make_pair(800,800)};
+  Rectangle test({200, 700}, {300, 500}, {0, 1, 0});
+
 
   while (!win.should_close()) {
     if (win.get_key(GLFW_KEY_ESCAPE) == GLFW_PRESS) {
       win.close();
     }
+    auto mouse_position = win.mouse_position();
+
+    Circle test2({(float) mouse_position.first, (float) mouse_position.second}, 20.0f, {1, 0, 0});
+    test.draw(win);
+    test2.draw(win);
 
     bool left_pressed = win.get_mouse_button(GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS;
 
@@ -30,7 +39,7 @@ int main(int argc, char* argv[])
     win.draw_point(x2, y2, 0.0f, 1.0f, 0.0f);
     win.draw_point(x3, y3, 0.0f, 0.0f, 1.0f);
 
-    auto mouse_position = win.mouse_position();
+
     if (left_pressed) {
       win.draw_line(30.0f, 30.0f, // FROM pixel idx with coords (x=30, y=30)
                     mouse_position.first, mouse_position.second, // TO mouse position in pixel coords
@@ -45,12 +54,14 @@ int main(int argc, char* argv[])
     win.draw_line(mouse_position.first, win.window_size().second - 10, mouse_position.first, win.window_size().second, 0.0, 0.0, 0.0);
 
     std::string display_text = "mouse position: (" + std::to_string(mouse_position.first) + ", " + std::to_string(mouse_position.second) + ")";
+    std::string display_time = "time since window was opened: " + std::to_string(t);
     
     int text_offset_x = 10;
     int text_offset_y = 5;
     unsigned int font_size = 35;
     
     win.draw_text(text_offset_x, text_offset_y, font_size, display_text);
+    win.draw_text(text_offset_x, text_offset_y + 30, font_size, display_time);
 
     win.update();
   }

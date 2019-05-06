@@ -3,8 +3,8 @@
 #include <catch.hpp>
 #include "vec2.hpp"
 #include "mat2.hpp"
-#include "Rectangle.hpp"
-#include "Circle.hpp"
+#include "rectangle.hpp"
+#include "circle.hpp"
 
 SCENARIO("Vector-Initialisierung", "[vector]") {
     GIVEN("Eine Initialisierung ohne Parameter") {

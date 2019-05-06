@@ -34,12 +34,12 @@ Mat2 operator*(float s, Mat2 const &m){
 }
 
 Vec2 operator*(Mat2 const &m, Vec2 const &v){
-    Vec2 erg{m.e_00 * v.x + m.e_01 * v.y};
+    Vec2 erg{m.e_00 * v.x + m.e_01 * v.y, m.e_10 * v.x + m.e_11 * v.y};
     return erg;
 }
 
 Vec2 operator*(Vec2 const &v, Mat2 const &m){
-    Vec2 erg{m.e_00 * v.x + m.e_01 * v.y};
+    Vec2 erg{m.e_00 * v.x + m.e_01 * v.y, m.e_10 * v.x + m.e_11 * v.y};
     return erg;
 }
 
