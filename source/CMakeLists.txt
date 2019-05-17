@@ -1,4 +1,8 @@
 # Build example
+add_executable(aufgabe_2_3
+
+        aufgabe_2_3.cpp)
+
 add_executable(example
         window.cpp
         glew.c
@@ -38,6 +42,7 @@ add_dependencies(clock glfw nanovg ${COPY_BINARY})
 
 # Build tests
 add_executable(tests
+        window.cpp
         vec2.cpp
         glew.c
         tests.cpp

@@ -40,23 +40,23 @@ SCENARIO("Vektorrechnung mit Memberfunktionen", "[vector]") {
                 REQUIRE(v.y == 6);
             }
         }
-        WHEN("they are subtracted (-=)"){
+        WHEN("they are subtracted (-=)") {
             v -= v1;
-            THEN("the second one gets subtracted from the first one"){
+            THEN("the second one gets subtracted from the first one") {
                 REQUIRE(v.x == -2);
                 REQUIRE(v.y == -2);
             }
         }
-        WHEN("one gets multiplied with a constant (*=)"){
+        WHEN("one gets multiplied with a constant (*=)") {
             v1 *= 2;
-            THEN("it becomes the product"){
+            THEN("it becomes the product") {
                 REQUIRE(v1.x == 6);
                 REQUIRE(v1.y == 8);
             }
         }
-        WHEN("one gets divided by a constant (/=)"){
+        WHEN("one gets divided by a constant (/=)") {
             v1 /= 2;
-            THEN("it becomes the quotient"){
+            THEN("it becomes the quotient") {
                 REQUIRE(v1.x == Approx(1.5));
                 REQUIRE(v1.y == Approx(2));
             }
@@ -75,23 +75,23 @@ SCENARIO("Vektorrechnung mit freien Funktionen", "[vector]") {
                 REQUIRE(erg.y == 6);
             }
         }
-        WHEN("they are subtracted"){
+        WHEN("they are subtracted") {
             auto erg = v - v1;
-            THEN("-"){
+            THEN("-") {
                 REQUIRE(erg.x == -2);
                 REQUIRE(erg.y == -2);
             }
         }
-        WHEN("one gets multiplied with a constant"){
+        WHEN("one gets multiplied with a constant") {
             auto erg = v1 * 2;
-            THEN("*"){
+            THEN("*") {
                 REQUIRE(erg.x == 6);
                 REQUIRE(erg.y == 8);
             }
         }
-        WHEN("one gets divided by a constant"){
+        WHEN("one gets divided by a constant") {
             auto erg = v1 / 2;
-            THEN("/"){
+            THEN("/") {
                 REQUIRE(erg.x == Approx(1.5));
                 REQUIRE(erg.y == Approx(2));
             }
@@ -99,23 +99,23 @@ SCENARIO("Vektorrechnung mit freien Funktionen", "[vector]") {
     }
 }
 
-SCENARIO("Matrix multiplication", "[matrix]"){
-    GIVEN("Two 2x2 matrices a and b"){
-        Mat2 a{1,2,3,4};
-        Mat2 b{8,9,6,5};
+SCENARIO("Matrix multiplication", "[matrix]") {
+    GIVEN("Two 2x2 matrices a and b") {
+        Mat2 a{1, 2, 3, 4};
+        Mat2 b{8, 9, 6, 5};
 
-        WHEN("they get multiplied (*=)"){
+        WHEN("they get multiplied (*=)") {
             a *= b;
-            THEN("a becomes the product"){
+            THEN("a becomes the product") {
                 REQUIRE(a.e_00 == 20);
                 REQUIRE(a.e_01 == 19);
                 REQUIRE(a.e_10 == 48);
                 REQUIRE(a.e_11 == 47);
             }
         }
-        WHEN("they get multiplied"){
+        WHEN("they get multiplied") {
             auto result = a * b;
-            THEN("result = a * b"){
+            THEN("result = a * b") {
                 REQUIRE(result.e_00 == 20);
                 REQUIRE(result.e_01 == 19);
                 REQUIRE(result.e_10 == 48);
@@ -125,7 +125,7 @@ SCENARIO("Matrix multiplication", "[matrix]"){
     }
 }
 
-TEST_CASE("Circumference"){
+TEST_CASE("Circumference") {
     Rectangle rectangle({2, 5}, {3, 7});
     Circle circle({8, 9}, 4);
 

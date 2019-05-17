@@ -13,6 +13,7 @@ int main(int argc, char *argv[]) {
     Rectangle rectangle_bold({500, 700}, {600, 500}, {0, 1, 0.5}, 3);
     Circle circle_slim({200, 300}, 20.0f, {1, 0, 0});
     Circle circle_bold({300, 300}, 20.0f, {0.5, 0, 0.5}, 3);
+    Circle circle_big{{400, 400}, 350.0f, {0.5f, 0.0f, 0.5f}, 3};
 
 
     while (!win.should_close()) {
@@ -22,12 +23,13 @@ int main(int argc, char *argv[]) {
         auto mouse_position = win.mouse_position();
 
         // Circle test2({(float) mouse_position.first, (float) mouse_position.second}, 20.0f, {1, 0, 0});
+        // test2.draw(win);
 
         Vec2 point_in_circle_bold{310, 310};
         Vec2 point_in_rectangle_slim{250, 600};
 
 
-        std::vector<Circle> circlelist = {circle_bold, circle_slim};
+        std::vector<Circle> circlelist = {circle_bold, circle_slim, circle_big};
         std::vector<Rectangle> rectanglelist = {rectangle_bold, rectangle_slim};
         Vec2 mouse_pos_vec2{(float) mouse_position.first, (float) mouse_position.second};
 
@@ -95,8 +97,11 @@ int main(int argc, char *argv[]) {
 
         win.draw_text(text_offset_x, text_offset_y, font_size, display_text);
         win.draw_text(text_offset_x, text_offset_y + 30, font_size, display_time);
-        win.draw_text(text_offset_x, text_offset_y + 60, font_size, "Red point is in bold circle: " + std::to_string(circle_bold.is_inside(point_in_circle_bold)));
-        win.draw_text(text_offset_x, text_offset_y + 90, font_size, "Blue point is in slim rectangle: " + std::to_string(rectangle_slim.is_inside(point_in_rectangle_slim)));
+        win.draw_text(text_offset_x, text_offset_y + 60, font_size,
+                      "Red point is in bold circle: " + std::to_string(circle_bold.is_inside(point_in_circle_bold)));
+        win.draw_text(text_offset_x, text_offset_y + 90, font_size, "Blue point is in slim rectangle: " +
+                                                                    std::to_string(rectangle_slim.is_inside(
+                                                                            point_in_rectangle_slim)));
 
 
         win.update();

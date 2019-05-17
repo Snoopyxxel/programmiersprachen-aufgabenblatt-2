@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
             win.close();
         }
         rim.draw(win);
-        int seconds = win.get_time() + 43195;
+        int seconds = win.get_time() + 3600/2; //  + 43195
         int minutes = seconds / 60;
         int hours = minutes / 60;
 
@@ -34,10 +34,11 @@ int main(int argc, char *argv[]) {
         Vec2 minutes_ptr = minutes_zero * minutes_rotations + center;
         win.draw_line(center.x, center.y, minutes_ptr.x, minutes_ptr.y, 0.0f, 1.0f, 0.0f);
 
-        auto hours_rotations = make_rotation_mat2((hours % 12) * (2 * M_PI / 12));
+        auto hours_rotations = make_rotation_mat2((minutes % 720) * (2 * M_PI / 720));
         Vec2 hours_ptr = hours_zero * hours_rotations + center;
         win.draw_line(center.x, center.y, hours_ptr.x, hours_ptr.y, 0.0f, 0.0f, 1.0f);
-        win.draw_text(10, 5, 35, std::to_string(hours % 12) + ":" + std::to_string(minutes % 60) + ":" + std::to_string(seconds % 60));
+        win.draw_text(10, 5, 35, std::to_string(hours % 12) + ":" + std::to_string(minutes % 60) + ":" +
+                                 std::to_string(seconds % 60));
 
         win.update();
     }

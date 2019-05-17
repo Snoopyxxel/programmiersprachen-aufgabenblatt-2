@@ -2,6 +2,9 @@
 #include "window.hpp"
 #include <cmath>
 
+Rectangle::Rectangle(Vec2 const &min, Vec2 const &max) :
+min_{min}, max_{max} {}
+
 Rectangle::Rectangle(Vec2 const &min, Vec2 const &max, Color const &col, float thick) :
 min_{min}, max_{max}, color_{col}, thickness_{thick} {}
 
