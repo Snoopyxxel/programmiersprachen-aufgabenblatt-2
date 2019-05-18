@@ -15,6 +15,9 @@ Circle::Circle(Vec2 const &ctr, float r, Color const &col) :
 Circle::Circle(Vec2 const &ctr, float r) :
         radius_{r}, center_{ctr} {}
 
+Circle::Circle(float r) :
+    radius_{r} {}
+
 float Circle::get_thickness() const {
     return thickness_;
 }
@@ -22,6 +25,7 @@ float Circle::get_thickness() const {
 float Circle::circumference() const {
     return 2 * M_PI * radius_;
 }
+
 
 void Circle::draw(Window const &window) const {
     Mat2 rotation = make_rotation_mat2((2 * M_PI) / 360);
@@ -45,6 +49,7 @@ void Circle::draw(Window const &window, float thickness) const {
     }
 }
 
+
 bool Circle::is_inside(Vec2 const &point) const {
     Vec2 center_to_point = center_ - point;
     return abs(sqrt(pow(center_to_point.x, 2) + pow(center_to_point.y, 2))) < radius_;
@@ -56,4 +61,16 @@ bool Circle::is_highl(std::string const &highl_name) const {
 
 float Circle::get_radius() const {
     return radius_;
+}
+
+bool Circle::operator<(Circle const &c) const {
+return this->get_radius() < c.get_radius();
+}
+
+bool Circle::operator>(Circle const &c) const {
+    return this->get_radius() > c.get_radius();
+}
+
+bool Circle::operator==(Circle const &c) const {
+    return  this->get_radius() == c.get_radius();
 }

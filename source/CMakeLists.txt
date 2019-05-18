@@ -27,7 +27,17 @@ add_executable(name_highlight
         circle.cpp
         mat2.cpp
         vec2.cpp
-        name_highlight_main.cpp)
+        name_highlight_main.cpp
+        )
+
+add_executable(aufgabe_6
+        window.cpp
+        glew.c
+        circle.cpp
+        mat2.cpp
+        vec2.cpp
+        aufgabe_6.cpp
+        )
 
 target_link_libraries(example
         glfw
@@ -50,11 +60,19 @@ target_link_libraries(name_highlight
         ${OPENGL_LIBRARIES}
         )
 
+target_link_libraries(aufgabe_6
+        glfw
+        ${GLFW_LIBRARIES}
+        nanovg
+        ${OPENGL_LIBRARIES}
+        )
 
 
 add_dependencies(example glfw nanovg ${COPY_BINARY})
 add_dependencies(clock glfw nanovg ${COPY_BINARY})
 add_dependencies(name_highlight glfw nanovg ${COPY_BINARY})
+add_dependencies(aufgabe_6 glfw nanovg ${COPY_BINARY})
+
 
 
 

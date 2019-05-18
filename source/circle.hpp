@@ -16,6 +16,8 @@ public:
 
     Circle(Vec2 const &ctr, float r);
 
+    Circle(float r);
+
     float circumference() const;
 
     void draw(Window const &window) const;
@@ -30,10 +32,14 @@ public:
 
     float get_radius() const;
 
+    bool operator<(Circle const& c) const;
+    bool operator>(Circle const &c) const;
+    bool operator==(Circle const& c) const;
+
 private:
     float radius_;
     float thickness_ = 1.0f;
-    Vec2 center_;
+    Vec2 center_ = {0.0f, 0.0f};
     Color color_;
     std::string name_ = "NoName";
 };
