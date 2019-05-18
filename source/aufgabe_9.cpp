@@ -35,7 +35,7 @@ int main() {
 
     std::generate(std::begin(v_0), std::end(v_0), std::rand);       // assigns new random values for all elements in v_0
 
-    std::cout << "\nv_0 (with newly generated random numbers):\n" << std::endl;
+    std::cout << "\nv_0 printed in reverse (with newly generated random numbers):\n" << std::endl;
 
     std::copy(v_0.crbegin(), v_0.crend(), std::ostream_iterator<int>(std::cout, "\n"));
 

@@ -3,6 +3,9 @@
 #include <iostream>
 #include <set>
 #include <map>
+#include <iterator>
+#include <algorithm>
+#include <vector>
 
 int main(){
     std::list<unsigned int> rand100(100);
@@ -31,4 +34,13 @@ int main(){
 
     std::cout << "\nSize of list is: " << rand100.size() << std::endl;
     std::cout << "There are " << diff_num.size() << " different Elements in the list." << std::endl;
+
+
+
+    std::vector<unsigned int> v_rand100(rand100.size());
+
+    std::copy(rand100.cbegin(), rand100.cend(), v_rand100.begin());
+
+    std::copy(v_rand100.cbegin(), v_rand100.cend(), std::ostream_iterator<int>(std::cout, ", "));
+
 }
