@@ -1,6 +1,8 @@
 # Build example
 add_executable(aufgabe_2_3
         aufgabe_2_3.cpp)
+add_executable(aufgabe_9
+        aufgabe_9.cpp)
 
 add_executable(example
         window.cpp
