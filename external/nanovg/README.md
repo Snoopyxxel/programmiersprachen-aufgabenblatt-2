@@ -53,7 +53,7 @@ Because of the way the rendering backend is build in NanoVG, drawing a composite
 nvgBeginPath(vg);
 nvgRect(vg, 100,100, 120,30);
 nvgCircle(vg, 120,120, 5);
-nvgPathWinding(vg, NVG_HOLE);	// Mark circle as a hole.
+nvgPathWinding(vg, NVG_HOLE);	// Mark Circle as a hole.
 nvgFillColor(vg, nvgRGBA(255,192,0,255));
 nvgFill(vg);
 ```

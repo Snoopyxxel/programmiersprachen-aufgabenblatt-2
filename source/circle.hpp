@@ -8,6 +8,8 @@
 
 class Circle {
 public:
+    Circle(Vec2 const &ctr, float r, Color const &col, std::string const &name);
+
     Circle(Vec2 const &ctr, float r, Color const &col, float thick);
 
     Circle(Vec2 const &ctr, float r, Color const &col);
@@ -24,11 +26,16 @@ public:
 
     float get_thickness() const;
 
+    bool is_highl(std::string const &highl_name) const;
+
+    float get_radius() const;
+
 private:
     float radius_;
     float thickness_ = 1.0f;
     Vec2 center_;
     Color color_;
+    std::string name_ = "NoName";
 };
 
 

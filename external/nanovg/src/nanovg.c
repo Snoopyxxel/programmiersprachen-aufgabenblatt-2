@@ -1712,7 +1712,7 @@ static int nvg__expandStroke(NVGcontext* ctx, float w, int lineCap, int lineJoin
 	NVGvertex* dst;
 	int cverts, i, j;
 	float aa = ctx->fringeWidth;
-	int ncap = nvg__curveDivs(w, NVG_PI, ctx->tessTol);	// Calculate divisions per half circle.
+	int ncap = nvg__curveDivs(w, NVG_PI, ctx->tessTol);	// Calculate divisions per half Circle.
 
 	nvg__calculateJoins(ctx, w, lineJoin, miterLimit);
 
@@ -1997,7 +1997,7 @@ void nvgArcTo(NVGcontext* ctx, float x1, float y1, float x2, float y2, float rad
 		return;
 	}
 
-	// Calculate tangential circle to lines (x0,y0)-(x1,y1) and (x1,y1)-(x2,y2).
+	// Calculate tangential Circle to lines (x0,y0)-(x1,y1) and (x1,y1)-(x2,y2).
 	dx0 = x0-x1;
 	dy0 = y0-y1;
 	dx1 = x2-x1;

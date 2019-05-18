@@ -2,6 +2,10 @@
 #include "circle.hpp"
 #include "mat2.hpp"
 
+Circle::Circle(Vec2 const &ctr, float r, Color const &col, std::string const &name) :
+        radius_{r}, center_{ctr}, color_{col}, name_{name} {}
+
+
 Circle::Circle(Vec2 const &ctr, float r, Color const &col, float thick) :
         radius_{r}, center_{ctr}, color_{col}, thickness_{thick} {}
 
@@ -44,4 +48,12 @@ void Circle::draw(Window const &window, float thickness) const {
 bool Circle::is_inside(Vec2 const &point) const {
     Vec2 center_to_point = center_ - point;
     return abs(sqrt(pow(center_to_point.x, 2) + pow(center_to_point.y, 2))) < radius_;
+}
+
+bool Circle::is_highl(std::string const &highl_name) const {
+    return name_ == highl_name;
+}
+
+float Circle::get_radius() const {
+    return radius_;
 }

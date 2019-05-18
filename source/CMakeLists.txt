@@ -1,6 +1,5 @@
 # Build example
 add_executable(aufgabe_2_3
-
         aufgabe_2_3.cpp)
 
 add_executable(example
@@ -21,6 +20,15 @@ add_executable(clock
         vec2.cpp
         clock_main.cpp
         )
+
+add_executable(name_highlight
+        window.cpp
+        glew.c
+        circle.cpp
+        mat2.cpp
+        vec2.cpp
+        name_highlight_main.cpp)
+
 target_link_libraries(example
         glfw
         ${GLFW_LIBRARIES}
@@ -35,9 +43,19 @@ target_link_libraries(clock
         ${OPENGL_LIBRARIES}
         )
 
+target_link_libraries(name_highlight
+        glfw
+        ${GLFW_LIBRARIES}
+        nanovg
+        ${OPENGL_LIBRARIES}
+        )
+
+
 
 add_dependencies(example glfw nanovg ${COPY_BINARY})
 add_dependencies(clock glfw nanovg ${COPY_BINARY})
+add_dependencies(name_highlight glfw nanovg ${COPY_BINARY})
+
 
 
 # Build tests

@@ -479,7 +479,7 @@ void nvgClosePath(NVGcontext* ctx);
 // Sets the current sub-path winding, see NVGwinding and NVGsolidity.
 void nvgPathWinding(NVGcontext* ctx, int dir);
 
-// Creates new circle arc shaped sub-path. The arc center is at cx,cy, the arc radius is r,
+// Creates new Circle arc shaped sub-path. The arc center is at cx,cy, the arc radius is r,
 // and the arc is drawn from angle a0 to a1, and swept in direction dir (NVG_CCW, or NVG_CW).
 // Angles are specified in radians.
 void nvgArc(NVGcontext* ctx, float cx, float cy, float r, float a0, float a1, int dir);
@@ -496,7 +496,7 @@ void nvgRoundedRectVarying(NVGcontext* ctx, float x, float y, float w, float h, 
 // Creates new ellipse shaped sub-path.
 void nvgEllipse(NVGcontext* ctx, float cx, float cy, float rx, float ry);
 
-// Creates new circle shaped sub-path.
+// Creates new Circle shaped sub-path.
 void nvgCircle(NVGcontext* ctx, float cx, float cy, float r);
 
 // Fills the current path with current fill style.
