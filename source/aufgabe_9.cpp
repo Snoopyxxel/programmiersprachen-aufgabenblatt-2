@@ -5,6 +5,9 @@
 # include <iterator>
 # include <algorithm>
 
+// v_0 : std::vector<int>
+// l_0 and l_1 : std::list<int>
+
 int main() {
 
     std::vector<int> v_0(10);       //erstellt vector v_0 mit 10 (leeren) elem.

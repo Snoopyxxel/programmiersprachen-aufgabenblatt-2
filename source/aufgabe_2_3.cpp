@@ -13,7 +13,7 @@ int main(){
     std::map<unsigned int, unsigned int> count_diffs;
 
     for(auto & i : rand100)
-        i = random() % 10;
+        i = random() % 101;
 
     for (auto i : rand100)
         diff_num.insert(i);
