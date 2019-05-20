@@ -24,6 +24,8 @@ public:
 
     void draw(Window const &window, float thickness) const;
 
+    void draw(Window const &window, Color color) const;
+
     bool is_inside(Vec2 const &point) const;
 
     float get_thickness() const;

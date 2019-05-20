@@ -24,7 +24,7 @@ TEST_CASE("filter alle vielfache von drei mit fkt-template"){
         item = std::rand() % 101;
     }
 
-    std::vector<unsigned int> n = filter(v, is_multiple_of_3);
+    auto n = filter(v, is_multiple_of_3);
     REQUIRE(std::all_of(n.begin(), n.end(), is_multiple_of_3));
 }
 

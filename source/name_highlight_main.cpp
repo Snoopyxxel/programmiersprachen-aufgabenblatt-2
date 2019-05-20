@@ -19,6 +19,7 @@ int main(int argc, char *argv[]) {
     std::string highl_name_in;
     std::cout << "Bitte geben sie den Namen des Kreises ein, den sie Highliten wollten: ";
     std::cin >> highl_name_in;
+    Color highl_color{0, 1, 0};
 
     Window win{std::make_pair(800, 800)};
     std::multiset<Circle, std::function<bool(Circle, Circle)>> circles([] (Circle const& c1, Circle const& c2) -> bool { return c1.get_radius() < c2.get_radius();});
@@ -43,7 +44,7 @@ int main(int argc, char *argv[]) {
         if (time < 10){
             for (auto const &item : circles) {
                 if (item.is_highl(highl_name_in)){
-                    item.draw(win, item.get_thickness() * 4);
+                    item.draw(win, highl_color);
                     found = true;
                 } else{
                     item.draw(win);
